@@ -121,7 +121,7 @@ public class BookingE2E extends Base {
     }
     //Verify deleting booking with token
     @Test(dependsOnMethods = "createBooking", priority = 1)
-    public void adeleteBooking() {
+    public void deleteBooking() {
         given()
                 .contentType("application/json")
                 .cookie("token", token)
