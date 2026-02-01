@@ -1,7 +1,10 @@
 package base;
+import io.qameta.allure.testng.AllureTestNg;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 
+@Listeners({AllureTestNg.class})
 public class Base {
 
     @BeforeClass

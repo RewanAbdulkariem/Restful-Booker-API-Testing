@@ -2,6 +2,9 @@ package tests;
 
 import base.Base;
 import io.restassured.response.Response;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -31,8 +34,9 @@ public class BookingE2E extends Base {
                     .extract()
                     .path("token");
     }
-    //Verify creating booking with valid data
-    @Test
+    @Test(priority = 1)
+    @Description("Verify that a user can create a new booking with valid data")
+    @Severity(SeverityLevel.BLOCKER)
     public void createBooking(){
 
         String randomFirstName = "User"+ (int)Math.floor(Math.random() * 1000);
@@ -68,8 +72,9 @@ public class BookingE2E extends Base {
 
         bookingId = response.path("bookingid");
     }
-    //Verify updating an existing booking with valid token
     @Test(dependsOnMethods = "createBooking")
+    @Description("Verify updating an existing booking with full details")
+    @Severity(SeverityLevel.NORMAL)
     public void updateBooking() {
         given()
             .contentType("application/json")
@@ -96,8 +101,9 @@ public class BookingE2E extends Base {
             .body("lastname", equalTo("User"));
     }
 
-    //Verify updating Dates only
     @Test(dependsOnMethods = "createBooking")
+    @Description("Verify partial update for booking dates using PATCH")
+    @Severity(SeverityLevel.NORMAL)
     public void updateDatesOnly(){
         given()
                 .contentType("application/json")
@@ -120,7 +126,9 @@ public class BookingE2E extends Base {
 
     }
     //Verify deleting booking with token
-    @Test(dependsOnMethods = "createBooking", priority = 1)
+    @Test(dependsOnMethods = "createBooking", priority = 100)
+    @Description("Verify deleting an existing booking")
+    @Severity(SeverityLevel.CRITICAL)
     public void deleteBooking() {
         given()
                 .contentType("application/json")

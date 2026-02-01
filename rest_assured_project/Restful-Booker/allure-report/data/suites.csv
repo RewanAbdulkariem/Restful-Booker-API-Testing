@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Verify updating an existing booking with full details","739","updateBooking","Default Suite","2026-02-01","passed","2026-02-01","tests.BookingE2E","Restful-Booker","tests.BookingE2E","updateBooking"
+"","706","createTokenTest","Default Suite","2026-02-01","passed","2026-02-01","tests.Auth","Restful-Booker","tests.Auth","createTokenTest"
+"Verify partial update for booking dates using PATCH","721","updateDatesOnly","Default Suite","2026-02-01","passed","2026-02-01","tests.BookingE2E","Restful-Booker","tests.BookingE2E","updateDatesOnly"
+"Verify that a user can create a new booking with valid data","824","createBooking","Default Suite","2026-02-01","passed","2026-02-01","tests.BookingE2E","Restful-Booker","tests.BookingE2E","createBooking"
+"Verify deleting an existing booking","758","deleteBooking","Default Suite","2026-02-01","passed","2026-02-01","tests.BookingE2E","Restful-Booker","tests.BookingE2E","deleteBooking"
